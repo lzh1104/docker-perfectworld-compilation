@@ -77,10 +77,10 @@ RUN mv upx-3.96-amd64_linux/upx /usr/local/bin/
 RUN rm -r upx-3.96-amd64_linux upx-3.96-amd64_linux.tar.xz
 
 # Cria o diretorio e ajusta as permissoes
-RUN mkdir /PWServer && chmod -R 0777 /PWServer
+# RUN mkdir /PWServer && chmod -R 0777 /PWServer
 
 # Cria os links simbolicos
-RUN ln -s /PWServer/gamed/libtask.so /lib/libtask.so && ln -s /PWServer/gamed/libskill.so /lib/libskill.so
+# RUN ln -s /PWServer/gamed/libtask.so /lib/libtask.so && ln -s /PWServer/gamed/libskill.so /lib/libskill.so
 
 # Limpa os pacotes nao mais necessorios
 RUN apt autoremove -y
@@ -126,10 +126,10 @@ RUN ln -s /usr/bin/gcc-10 /usr/bin/gcc
 RUN ln -s /usr/bin/g++-10 /usr/bin/g++
 
 # Copia o script de inicialização
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+# COPY entrypoint.sh /entrypoint.sh
+# RUN chmod +x /entrypoint.sh
 
 # Define o script como ponto de entrada
-ENTRYPOINT ["/entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["/bin/bash"]
